@@ -1,6 +1,7 @@
 module Main where
 
-import Lib
+import Game.Types
+import App
 
 main :: IO ()
-main = someFunc
+main = run

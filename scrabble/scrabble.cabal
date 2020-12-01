@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: eb2003de101f1c824d3ee6646aaf21b45bfa876a3c4f3e25410853b3c4ad00b7
+-- hash: fc0755257dcfa82b044256bf6e4ebee18232cc27a09c0adaf0615f1caec35162
 
 name:           scrabble
 version:        0.1.0.0
@@ -27,13 +27,21 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      App
+      Game.State
+      Game.Types
   other-modules:
       Paths_scrabble
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , servant
+    , servant-server
+    , transformers
+    , wai
+    , warp
   default-language: Haskell2010
 
 executable scrabble-exe
@@ -44,8 +52,14 @@ executable scrabble-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , scrabble
+    , servant
+    , servant-server
+    , transformers
+    , wai
+    , warp
   default-language: Haskell2010
 
 test-suite scrabble-test
@@ -57,6 +71,12 @@ test-suite scrabble-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , scrabble
+    , servant
+    , servant-server
+    , transformers
+    , wai
+    , warp
   default-language: Haskell2010
