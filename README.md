@@ -34,4 +34,5 @@ Scrabble — настольная игра, в которой от двух до
   2) когда все игроки последовательно пропустили ход два круга подряд.
 
 Видео об Scrabble: https://www.youtube.com/watch?v=wwmXp6cpRmQ&ab_channel=Coldfield
+
 Правила: https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D1%8D%D0%B1%D0%B1%D0%BB
