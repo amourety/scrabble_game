@@ -2,3 +2,6 @@
 *.iml
 .idea
 out
+/.stack-work/
+.DS_Store
+dist-newstyle

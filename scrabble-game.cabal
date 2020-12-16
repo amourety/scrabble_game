@@ -4,13 +4,13 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fc0755257dcfa82b044256bf6e4ebee18232cc27a09c0adaf0615f1caec35162
+-- hash: 57bda6b0c3edee953b9cd5b93a62fe62b176e50ccdcfcb10d110823bce41815d
 
-name:           scrabble
+name:           scrabble-game
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/scrabble#readme>
-homepage:       https://github.com/githubuser/scrabble#readme
-bug-reports:    https://github.com/githubuser/scrabble/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/scrabble-game#readme>
+homepage:       https://github.com/githubuser/scrabble-game#readme
+bug-reports:    https://github.com/githubuser/scrabble-game/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2020 Author name here
@@ -23,60 +23,90 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/scrabble
+  location: https://github.com/githubuser/scrabble-game
 
 library
   exposed-modules:
       App
-      Game.State
+      Extensions
+      Game.Logic
       Game.Types
+      WebApiTypes
   other-modules:
-      Paths_scrabble
+      Paths_scrabble_game
   hs-source-dirs:
       src
   build-depends:
-      aeson
+      QuickCheck
+    , aeson
     , base >=4.7 && <5
+    , directory
+    , hspec
+    , random
     , servant
+    , servant-client
+    , servant-quickcheck
     , servant-server
+    , tasty
+    , tasty-hunit
     , transformers
     , wai
     , warp
+    , lens
   default-language: Haskell2010
 
-executable scrabble-exe
+executable scrabble-game-exe
   main-is: Main.hs
   other-modules:
-      Paths_scrabble
+      Paths_scrabble_game
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      aeson
+      QuickCheck
+    , aeson
     , base >=4.7 && <5
-    , scrabble
+    , directory
+    , hspec
+    , random
+    , scrabble-game
     , servant
+    , servant-client
+    , servant-quickcheck
     , servant-server
+    , tasty
+    , tasty-hunit
     , transformers
     , wai
     , warp
+    , lens
   default-language: Haskell2010
 
-test-suite scrabble-test
+test-suite scrabble-game-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_scrabble
+      Game
+      Paths_scrabble_game
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      aeson
+      QuickCheck
+    , aeson
     , base >=4.7 && <5
-    , scrabble
+    , directory
+    , hspec
+    , random
+    , scrabble-game
     , servant
+    , servant-client
+    , servant-quickcheck
     , servant-server
+    , tasty
+    , tasty-hunit
     , transformers
     , wai
     , warp
+    , lens
   default-language: Haskell2010
