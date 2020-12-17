@@ -1,19 +1,24 @@
-<div *ngIf="numberOfPlayers<2">
-  Waiting for players
+<div class="header">
+  <div class="header-text">SCRABBLE</div>
 </div>
-<div *ngIf="numberOfPlayers>1&&!isGameStarted">
-  <button (click)="startGame()">
-    Start game
+<div class="waiting" *ngIf="numberOfPlayers<2&&!isGameStarted">
+  Ждем игру
+
+</div>
+<div class="startGame" *ngIf="numberOfPlayers>1&&!isGameStarted">
+  <button class="button-1" (click)="startGame()">
+    Начать игру
   </button>
 </div>
+<div class="home-container">
 <div class="home" *ngIf="isGameStarted">
 
   <div class="left-menu">
     <div class="label">
-      Game Info
+      Информация по игре
     </div>
     <br>
-    You are Player {{playerNumber}}
+    Вы Игрок {{playerNumber}}
     <br>
     <div class="info">
       <div *ngFor="let n of playerNames">
@@ -24,10 +29,10 @@
       <br>
       <br>
       <div *ngIf="isYourTurn">
-        Your turn
+        Ваш ход
       </div>
       <div *ngIf="!isYourTurn">
-        Turn of Player {{playerTurnNumber}}
+        Ход Игрока {{playerTurnNumber}}
       </div>
     </div>
   </div>
@@ -62,30 +67,31 @@
 
   <div class="legend">
     <div class="legend-row">
-      <div class="cell center"></div>&nbsp;&nbsp; - клетка для начала игры
+      <div class="cell center"></div>&nbsp;&nbsp;  - клетка для начала игры
     </div>
     <div class="legend-row">
-      <div class="cell white"></div>&nbsp;&nbsp; - очки без умножения
+      <div class="cell white"></div>&nbsp;&nbsp;  - очки без умножения
     </div>
     <div class="legend-row">
-      <div class="cell blue"></div>&nbsp;&nbsp; - удвоение очков за букву
+      <div class="cell blue"></div>&nbsp;&nbsp;  - удвоение очков за букву
     </div>
     <div class="legend-row">
-      <div class="cell navy"></div>&nbsp;&nbsp; - утроение очков за букву
+      <div class="cell navy"></div>&nbsp;&nbsp;  - утроение очков за букву
     </div>
     <div class="legend-row">
-      <div class="cell pink"></div>&nbsp;&nbsp; - удвоение очков за слово
+      <div class="cell pink"></div>&nbsp;&nbsp;  - удвоение очков за слово
     </div>
     <div class="legend-row">
-      <div class="cell red"></div>&nbsp;&nbsp; - утроение очков за слово
+      <div class="cell red"></div>&nbsp;&nbsp;  - утроение очков за слово
     </div>
     <div class="buttons" *ngIf="isYourTurn">
-      <button (click)="endTurn()">
-        End Turn
+      <button class="button-2" (click)="endTurn()">
+        Завершить ход
       </button>
-      <button (click)="changeLetters()">
-        Change letters and skip turn
+      <button class="button-2" (click)="changeLetters()">
+        Сбросить буквы
       </button>
     </div>
   </div>
+</div>
 </div>

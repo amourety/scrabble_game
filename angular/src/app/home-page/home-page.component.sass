@@ -1,62 +1,164 @@
 ::ng-deep
-  .home
-    display: flex
+  .buttons
+    .button-2
+      font-weight: bold
+      font-size: 15px
+      text-align: center
+      font-family: "Courier New", serif
+      color: #232323
+      background: transparent
+      border: 1px solid #232323
+      position: relative
+      letter-spacing: .3em
+      transition: .2s ease-in-out
+      cursor: pointer
+
+    .button-2:before
+      content: ""
+      position: absolute
+      top: 5px
+      left: 5px
+      width: 100%
+      height: 100%
+      background: #e4d7c0
+      z-index: -1
+      transition: .25s ease
+      transform: translate(0, 0)
+
+    .button-2:hover:before
+      transform: translate(4px, 4px)
+  .button-1
+    font-weight: bold
+    font-size: 75px
+    text-align: center
+    font-family: "Courier New", serif
+    text-shadow: 3px 1px 2px black, 0 0 1em #ffe1b8
+    -webkit-text-stroke: 3px #e4d7c0
+    color: #232323
+    background: transparent
+    border: 1px solid #232323
+    position: relative
+    letter-spacing: .3em
+    padding: 17px 34px 17px 39px
+    transition: .2s ease-in-out
+    cursor: pointer
+
+  .button-1:before
+    content: ""
+    position: absolute
+    top: 5px
+    left: 5px
+    width: 100%
+    height: 100%
+    background: #e4d7c0
+    z-index: -1
+    transition: .25s ease
+    transform: translate(0, 0)
+
+  .button-1:hover:before
+    transform: translate(4px, 4px)
+  body
+    background-image: url("background.jpg")
+    -moz-background-size: 100% /* Firefox 3.6+ */
+    -webkit-background-size: 100% /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100% /* Opera 9.6+ */
+    background-size: 100% /* Современные браузеры */
+  .header
     ::ng-deep
-      .left-menu
-        background-color: #2b85cf
-        width: 200px
-        color: white
-        padding-left: 16px
-        padding-top: 32px
-        .label
-          font-weight: bold
-        .info
-          padding-top: 64px
-          font-weight: 600
-      .body
-        padding: 32px 0 32px 32px
-      .center
-        background-color: bisque
-      .pink
-        background-color: #e460a8
-      .blue
-        background-color: #91b1e6
-      .navy
-        background-color: #175ed1
-      .red
-        background-color: #e46161
-      .white
-        background-color: white
-      .field
+      .header-text
+        display: inline-block
+        vertical-align: top
+        text-shadow: 1px 1px 2px black, 0 0 1em #ffe1b8
+        -webkit-text-stroke: 2px #e4d7c0
+    font-family: "Courier New", monospace
+    font-size: 100px
+    font-weight: bold
+    text-align: center
+  .startGame
+    padding-top: 150px
+    text-align: center
+  .waiting
+    font-weight: bold
+    font-size: 100px
+    text-align: center
+    font-family: "Courier New", serif
+    text-shadow: 3px 1px 2px black, 0 0 1em #ffe1b8
+    -webkit-text-stroke: 3px #e4d7c0
+    padding-top: 150px
+  .home-container
+    display: flex
+    align-items: center
+    justify-content: center
+    ::ng-deep
+      .home
+        border: #e4cda3 3px solid
+        font-family: "Courier New", serif
         display: flex
-        border-left: solid 1px black
-        border-top: solid 1px black
-      .cell
-        width: 32px
-        height: 32px
-        border-right: solid 1px black
-        border-bottom: solid 1px black
-        text-align: center
-      .legend
-        padding: 32px 0 0 32px
-        //display: inherit
+        background-color: #e4cfd2
         ::ng-deep
-          .legend-row
+          .left-menu
+            border: black 1px solid
+            padding: 32px 0 0 32px
+            margin: 32px 0 32px 32px
+            width: 33%
+            .label
+              font-weight: bold
+            .info
+              padding-top: 64px
+              font-weight: 600
+          .body
+            float: left
+            padding: 32px 32px 32px 32px
+          .center
+            background-color: #47b500
+          .pink
+            background-color: #e4a9c7
+          .blue
+            background-color: #91b1e6
+          .navy
+            background-color: #175ed1
+          .red
+            background-color: #e46161
+          .white
+            background-color: white
+          .field
             display: flex
+            border-left: solid 1px black
+            border-top: solid 1px black
           .cell
-            border: solid 1px black
-            margin-bottom: 16px
-      .available-letters
-        margin-top: 32px
-        ::ng-deep
-          .cell
-            margin-top: 16px
-            margin-right: 8px
-            border: solid 2px black
-          .letters
-            display: flex
-          .selected
-            border: solid 2px green
+            width: 32px
+            height: 32px
+            font-weight: bold
+            font-size: 30px
+            border-right: solid 1px black
+            border-bottom: solid 1px black
+            text-align: center
+          .legend
+            width: 33%
+            padding: 32px 0 0 32px
+            //display: inherit
+            ::ng-deep
+              .legend-row
+                display: flex
+              .cell
+                border: solid 1px black
+                margin-bottom: 16px
+          .available-letters
+            margin-top: 32px
+            font-weight: bold
+            font-size: 30px
+            ::ng-deep
+              .cell
+                display: inline-block
+                vertical-align: top
+                margin-top: 16px
+                margin-right: 8px
+                border: solid 2px black
+              .letters
+                display: flex
+              .selected
+                color: #80000e
+                border: solid 2px #80000e
 
 
 

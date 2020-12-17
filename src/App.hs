@@ -51,10 +51,7 @@ server =
     startGame
 
 initGame :: Handler ResponseForInitGame
-initGame = initGameLoop 1
-
-
-
+initGame = initGameLoop 0
 
 initGameLoop :: Int -> Handler ResponseForInitGame
 initGameLoop gameNumber = do
